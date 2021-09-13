@@ -58,7 +58,7 @@ function verifyBlock(bl) {
 	}
 	
 	return bl.index > 0 && 
-		bl.data !== '' &&
+		Boolean(bl.data) &&
 		bl.hash === blockHash(bl) && 
 		bl.prevHash === getPrevious(bl).hash
 }
